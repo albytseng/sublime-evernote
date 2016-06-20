@@ -885,7 +885,7 @@ class Markdown(object):
                 align_from_col_idx[col_idx] = ' align="right"'
 
         # thead
-        hlines = ['<br /><table%s>' % table_style, '<thead>', '<tr%s>' % tr_style]
+        hlines = ['<table%s>' % table_style, '<thead>', '<tr%s>' % tr_style]
         cols = [cell.strip() for cell in head.strip('| \t\n').split('|')]
         for col_idx, col in enumerate(cols):
             hlines.append('  <th%s%s>%s</th>' % (
@@ -909,9 +909,9 @@ class Markdown(object):
                 ))
             hlines.append('</tr>')
         hlines.append('</tbody>')
-        hlines.append('</table><br />')
+        hlines.append('</table>')
 
-        return '\n'.join(hlines) + '<br />\n'
+        return '\n'.join(hlines) + '\n'
 
     def _do_tables(self, text):
         """Copying PHP-Markdown and GFM table syntax. Some regex borrowed from
@@ -1451,7 +1451,7 @@ class Markdown(object):
         if self.list_level:
             return "<%s>\n%s</%s>\n" % (lst_type, result, lst_type)
         else:
-            return "<br /><%s>\n%s</%s><br />\n\n" % (lst_type, result, lst_type)
+            return "<%s>\n%s</%s>\n\n" % (lst_type, result, lst_type)
 
     def _do_lists(self, text):
         # Form HTML ordered (numbered) and unordered (bulleted) lists.
