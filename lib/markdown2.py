@@ -1766,8 +1766,8 @@ class Markdown(object):
         self._escape_table[text] = hashed
         return hashed
 
-    _strong_re = re.compile(r"(\*\*|__)(?=\S)(.+?[*_]*)(?<=\S)\1", re.S)
-    _em_re = re.compile(r"(\*|_)(?=\S)(.+?)(?<=\S)\1", re.S)
+    _strong_re = re.compile(r"(\*\*|\_\_)(?=\S)(.+?[*_]*)(?<=\S)\1", re.S)
+    _em_re = re.compile(r"(\*|\_)(?=\S)(.+?)(?<=\S)\1", re.S)
     _strike_re = re.compile(r"~~(?=\S)(.+?)(?<=\S)~~", re.S)
     _underline_re = re.compile(r"==(?=\S)(.+?)(?<=\S)==", re.S)
     _code_friendly_strong_re = re.compile(r"\*\*(?=\S)(.+?[*_]*)(?<=\S)\*\*", re.S)
