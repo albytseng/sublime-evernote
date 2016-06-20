@@ -909,7 +909,7 @@ class Markdown(object):
                 ))
             hlines.append('</tr>')
         hlines.append('</tbody>')
-        hlines.append('</table><br />')
+        hlines.append('</table>')
 
         return '\n'.join(hlines) + '\n'
 
@@ -1897,7 +1897,7 @@ class Markdown(object):
                 # Wrap <p> tags.
                 graf = self._run_span_gamut(graf)
                 # grafs.append("<p>" + graf.lstrip(" \t") + "</p>")
-                grafs.append("<p>" + graf.lstrip(" \t") + "</p><br />")
+                grafs.append("" + graf.lstrip(" \t") + "<br /><br />")
 
                 if cuddled_list:
                     grafs.append(cuddled_list)
