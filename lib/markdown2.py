@@ -911,7 +911,7 @@ class Markdown(object):
         hlines.append('</tbody>')
         hlines.append('</table>')
 
-        return '\n'.join(hlines) + '\n'
+        return '\n'.join(hlines) + '<br />\n'
 
     def _do_tables(self, text):
         """Copying PHP-Markdown and GFM table syntax. Some regex borrowed from
@@ -1898,6 +1898,7 @@ class Markdown(object):
                 graf = self._run_span_gamut(graf)
                 # grafs.append("<p>" + graf.lstrip(" \t") + "</p>")
                 grafs.append("<br />" + graf.lstrip(" \t") + "<br />")
+
 
                 if cuddled_list:
                     grafs.append(cuddled_list)
