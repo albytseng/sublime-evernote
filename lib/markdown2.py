@@ -1896,7 +1896,8 @@ class Markdown(object):
 
                 # Wrap <p> tags.
                 graf = self._run_span_gamut(graf)
-                grafs.append("<p>" + graf.lstrip(" \t") + "</p>")
+                # grafs.append("<p>" + graf.lstrip(" \t") + "</p>")
+                grafs.append("" + graf.lstrip(" \t") + "<br>")
 
                 if cuddled_list:
                     grafs.append(cuddled_list)
