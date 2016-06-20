@@ -1452,7 +1452,7 @@ class Markdown(object):
         if self.list_level:
             return "<%s>\n%s</%s>\n" % (lst_type, result, lst_type)
         else:
-            return "<%s%s>\n%s</%s>\n\n" % (lst_type, lst_type_class_str, result, lst_type)
+            return "<div%s><%s>\n%s</%s></div>\n\n" % (lst_type_class_str, lst_type, result, lst_type)
 
     def _do_lists(self, text):
         # Form HTML ordered (numbered) and unordered (bulleted) lists.
