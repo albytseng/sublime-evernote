@@ -453,8 +453,9 @@ class HTML2Text(HTMLParser.HTMLParser):
             else:
                 if start == 1:
                     if attrs and attrs.get("title") != "footnotes":
-                        self.block_stack.append(True)
-                        self.o(tag_str(tag+' markdown="1"', attrs, start))
+                        # self.block_stack.append(True)
+                        # self.o(tag_str(tag+' markdown="1"', attrs, start))
+                        self.block_stack.append(False)                        
                     else:
                         self.block_stack.append(False)
                 elif start == 0:
