@@ -1870,6 +1870,8 @@ class Markdown(object):
         # Strip leading and trailing lines:
         text = text.strip('\n')
 
+        p_class_str = self._html_class_str_from_tag("p")
+
         # Wrap <p> tags.
         grafs = []
         for i, graf in enumerate(re.split(r"\n{2,}", text)):
@@ -1897,7 +1899,7 @@ class Markdown(object):
                 # Wrap <p> tags.
                 graf = self._run_span_gamut(graf)
                 # grafs.append("<p>" + graf.lstrip(" \t") + "</p>")
-                grafs.append("<br />" + graf.lstrip(" \t") + "<br />")
+                grafs.append("<p{}>".format(p_class_str) + graf.lstrip(" \t") + "</p>")
 
 
                 if cuddled_list:
