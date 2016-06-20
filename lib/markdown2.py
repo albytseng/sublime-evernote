@@ -1450,7 +1450,7 @@ class Markdown(object):
         lst_type_class_str = self._html_class_str_from_tag(lst_type)
         result = self._process_list_items(lst)
         if self.list_level:
-            return "<%s%s>\n%s</%s>\n" % (lst_type, lst_type_class_str, result, lst_type)
+            return "<%s>\n%s</%s>\n" % (lst_type, result, lst_type)
         else:
             return "<%s%s>\n%s</%s>\n\n" % (lst_type, lst_type_class_str, result, lst_type)
 
